@@ -5,7 +5,14 @@ import openai
 app = FastAPI()
 
 # Set your OpenAI API key here
-openai.api_key = "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"
+#openai.api_key = "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"
+
+def read_api_key():
+    with open("api_key.txt", "r") as file:
+        return file.read().strip()
+
+# Set your OpenAI API key here
+openai.api_key = read_api_key()
 
 class Question(BaseModel):
     question: str
@@ -33,5 +40,4 @@ async def ask_question(question: Question):
 
 if __name__ == "__main__":
     import uvicorn
-
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run(app, host="localhost", port=8000)
