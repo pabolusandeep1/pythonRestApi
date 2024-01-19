@@ -1,2 +1,2 @@
-This repo will have codebase for a simple REST Api exposed using python scripting.
-For the first commit.
+- This repo will have codebase for a simple REST Api exposed using python scripting.
+- Adding code to read a question and check the answer with chatGpt
